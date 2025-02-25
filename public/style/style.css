@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+nav{
+    background-color: rgba(14, 13, 13, 0.87);
+    padding: 2%;
+    display: flex;
+}
+nav h1{
+    font-weight: lighter;
+    color: white;
+    font-family:cursive;
+
+}
+
+ input{
+    padding:0.8%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 70%;
+    box-shadow: 5px 5px 10px rgba(204, 200, 200, 0.658);
+    margin-top: 2%;
+    margin-left: 13%;
+}
+
+input::placeholder{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+}
+
+.blogs{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blog{
+    border: 1px solid #ddd;
+    width: 27%;
+    margin:3%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.blog:hover{
+    transform: translateY(-30px);
+    transition-duration: 1s;
+}
+
+.blog:not(:hover){
+    transition: 0.4s;
+}
+
+.blog img {
+    width: 100%;  /* Make the image take full width of the blog card */
+    height: 200px; /* Set a fixed height to maintain uniformity */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-bottom: 1px solid #ddd; /* Adds a nice separation from the text */
+}
+
+.filter{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 35%;
+}
+.filter button{
+    padding: 5px 7px ;
+    background-color: rgb(11, 23, 31);
+    color: white;
+    border-radius: 3px;
+    margin-left: 30px;
+    border:none;
+    cursor: pointer;
+}
+
+.filter button:hover{
+    padding: 7px 10px;
+    transform: translateY(5px);
+    transition-duration: 0.4s;
+}
+
+
+.filter button:not(:hover){
+    transition-duration: 0.3s;
+}
+
+.login a{
+    color: white;
+    cursor: pointer;
+    margin-left: 80%;
+    position: absolute;
+    text-decoration: none;
+}
+.addBlog{
+    margin-left: 70%;
+}
+.addBlog a{
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnswerBD</title>
+    <script src="/frameworks/vue.js"></script>
+    <script src="/frameworks/axios.js"></script>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="app">
+        <nav>
+            <div class="logo">
+                <h1>AnswerBD</h1>
+            </div>
+
+            <div class="addBlog">
+                <a href="/addBlog" target="_self">Add blog</a>
+                <!-- <i id="add" class="bi-plus-circle"></i> -->
+            </div>
+
+
+        </nav>
+        <!-- <div class="searchbar">
+            <input type="text" placeholder="Search Here">
+        </div> -->
+        <!-- <div class="filter">
+            <button>
+                সবকিছু
+            </button>
+            <button>
+                জিবন
+            </button>
+            <button>
+               স্বাস্থ্য
+            </button>
+            <button>
+                ব্যবসা
+            </button>
+            <button>
+                শিক্ষা
+            </button>
+
+        </div> -->
+        <div class="blogs">
+            <article class="blog" v-for="blog in blogs" 
+            :key="blog.id" @click="clickBlog(blog.id)">
+                <img :src="blog.img" 
+                :alt="blog.title" srcset="">
+                <h1>{{blog.title}}</h1>
+               
+            </article>
+            
+        </div>
+    </div>
+<script src="/js/script.js"></script>
+</body>
+
+</html>

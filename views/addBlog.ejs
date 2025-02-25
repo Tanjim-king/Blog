@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Blog</title>
+    <link rel="stylesheet" href="/style/addBlog.css">
+    <script src="/frameworks/vue.js"></script>
+    <script src="/frameworks/axios.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <nav>
+            <div class="logo">
+                <h1>AnswerBD</h1>
+            </div>
+        </nav>
+        <article class="container">
+            <h2>Create a Blog Post</h2>
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" v-model="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="thumb">Add Thumbnail URL:</label>
+                <input type="url" id="thumb" v-model="thumb" placeholder="Paste image URL">
+            </div>
+            <div class="form-group">
+                <label for="title">Blog Title:</label>
+                <input type="text" id="title" v-model="title" placeholder="Enter blog title">
+            </div>
+            <div class="form-group">
+                <label for="desc">Blog Description:</label>
+                <textarea id="desc" v-model="desc" placeholder="Write your blog here..." rows="20"></textarea>
+            </div>
+            <button type="button" class="add" @click="addBlog()">Submit</button>
+        </article>
+    </div>
+<script src="/js/addblog.js"></script>
+</body>
+
+</html>
