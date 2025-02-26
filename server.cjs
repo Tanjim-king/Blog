@@ -1,8 +1,20 @@
 const express = require("express");
+const jsonServer = require("json-server");
+const path = require("path");
+const axios = require("axios");
 const app = express();
 const port = 3000;
-const path = require("path");
-const axios = require('axios'); // node
+
+// Set up JSON Server
+const apiServer = jsonServer.create();
+const router = jsonServer.router("db.json");
+const middlewares = jsonServer.defaults();
+
+apiServer.use(middlewares);
+apiServer.use(router);
+apiServer.listen(5050, () => {
+    console.log("JSON Server is running on http://localhost:5050");
+});
 
 // Set EJS as the templating engine
 app.set("view engine", "ejs");
@@ -12,37 +24,34 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.get('/', (req, res) => {
-    res.render("index"); // Render EJS template
+    res.render("index");
 });
+
 app.get('/login', (req, res) => {
-    res.render("login"); // Render EJS template
+    res.render("login");
 });
+
 app.get('/signup', (req, res) => {
-    res.render("signup"); // Render EJS template
+    res.render("signup");
 });
+
 app.get('/addBlog', (req, res) => {
-    res.render("addBlog"); // Render EJS template
+    res.render("addBlog");
 });
 
-app.get('/blog/:blogId', async(req, res) => {
-    const blogId = req.params.blogId
-    let blog = []
-    await axios.get(` http://localhost:5050/blogs/${blogId}`)
-    .then(res =>{
-        blog = res.data
-    })
-    
-     res.render("blog", { blog: blog }); // Pass data to EJS template
+app.get('/blog/:blogId', async (req, res) => {
+    const blogId = req.params.blogId;
+    try {
+        const response = await axios.get(`http://localhost:5050/blogs/${blogId}`);
+        res.render("blog", { blog: response.data });
+    } catch (error) {
+        console.error("Error fetching blog:", error);
+        res.status(500).send("Error retrieving blog post");
+    }
 });
 
-app.post('/setUser' , (req , res)=>{
-    const userId  = req.body.userId;
-    axios.get(`http://localhost:5050/users/${userId}`)
-    .then(dataRes=>{
-        console.log("Users detail :", dataRes.data)
-    })
-})
-// Start the server
-app.listen(port, async () => {
+
+// Start the Express server
+app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
