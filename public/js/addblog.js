@@ -6,7 +6,8 @@ const app = createApp({
             thumb:"",
             title : "",
             desc:"",
-            name : ""
+            name : "",
+            type : ""
         }
     },
     methods:{
@@ -20,12 +21,11 @@ const app = createApp({
                 date : d.toLocaleDateString('bn-BD',{
                     day : 'numeric',
                     month:'long',
-                    year : 'numeric',
-                    hour : 'numeric',
-                    minute : 'numeric'
-                })
+                    year : 'numeric'
+                }),
+                type:this.type
             }
-            if (this.thumb && this.title && this.desc) {
+            if (this.thumb && this.title && this.desc && this.name && this.type) {
                 axios.post("http://localhost:5050/blogs" , info)
                     .then(res =>{
                         alert("Your blog is succesfull add")

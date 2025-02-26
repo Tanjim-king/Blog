@@ -4,16 +4,19 @@
   "main": "server.cjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"npx json-server --watch db.json --port 5050\" \"npx nodemon server.cjs\""
+    "dev": "concurrently \"npx json-server --watch db.json --port 5050\" \"npx nodemon server.cjs\"",
+    "start" : "node server.cjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "description": "",
+  "devDependencies" :{
+    "concurrently": "^9.1.2"
+  },
   "dependencies": {
     "axios": "^1.7.9",
-    "concurrently": "^9.1.2",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "json-server": "^0.17.4"
