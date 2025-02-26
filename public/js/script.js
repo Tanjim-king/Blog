@@ -4,16 +4,18 @@ const app = createApp({
     data(){
         return{
             blogs : [],
-            type : 'all'
+            type : 'all',
+        
         }
     },
 
     methods:{
         clickBlog(blogId){
-           window.open(`/blog/${blogId}`)
+           window.open(`/blog/${blogId}` , "_self")
         },
         changeType(type){
             this.type = type
+
         }
     },
    computed:{
@@ -30,6 +32,7 @@ const app = createApp({
         .then(res=>{
             this.blogs = res.data
         })
+        
     }
 })
 

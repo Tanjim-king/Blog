@@ -89,3 +89,9 @@ footer {
     color: white;
     font-size: 14px;
 }
+
+@media (max-width:375px){
+    article{
+        font-size: 15px;
+    }
+}

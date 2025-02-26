@@ -88,3 +88,10 @@ select{
     width: 20%;
     padding: 5px;
 }
+
+
+@media (max-width:375px){
+    .container {
+        width: 90%;
+    }
+}
