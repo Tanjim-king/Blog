@@ -90,7 +90,7 @@ select{
 }
 
 
-@media (max-width:375px){
+@media (max-width:768px){
     .container {
         width: 90%;
     }

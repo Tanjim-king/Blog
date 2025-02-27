@@ -24,8 +24,8 @@
                 <input type="text" id="name" v-model="name" placeholder="নাম">
             </div>
             <div class="form-group">
-                <label for="thumb">ছবির URL:</label>
-                <input type="url" id="thumb" v-model="thumb" placeholder="Paste image URL" autocomplete="off">
+                <label for="image">ছবি আপলোড করুন:</label>
+                <input type="file" id="image" @change="convertToBase64">
             </div>
             <div class="form-group">
                 <label for="title">ব্লগ এর টাইটেল:</label>
@@ -33,12 +33,12 @@
             </div>
             <div class="form-group">
                 <label for="type">ব্লগ এর টাইপ:</label>
-               <select name="" id="type" v-model="type">
+               <select id="type" v-model="type">
                 <option value="none" selected disabled> নির্বাচন করুন</option>
                 <option value="health"> স্বাস্থ্য</option>
-                <option value="job" > ব্যবসা</option>
-                <option value="education" > শিক্ষা</option>
-                <option value="story" > গল্প</option>
+                <option value="job"> ব্যবসা</option>
+                <option value="education"> শিক্ষা</option>
+                <option value="story"> গল্প</option>
                 <option value="other"> অন্যান্য</option>
                </select>
             </div>

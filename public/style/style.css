@@ -110,18 +110,19 @@ input::placeholder{
     text-decoration: none;
 }
 
-@media (max-width:375px){
+@media (max-width:768px){
     nav{
         width: 200%;
     }
 
     .addBlog{
-        margin-left: 12%;
+        margin-left: 20%;
+        box-shadow: 10px 1px 10px rgba(122, 121, 121, 0.541);
     }
     .filter{
         display: flex;
         margin-top: 10px;
-        margin-left: 1%;
+        margin-left: 15%;
     }
 
     .filter button{
@@ -131,8 +132,6 @@ input::placeholder{
     .blog{
         margin-top: 10%;
     }
-    .addBlog{
-        box-shadow: 10px 1px 10px rgba(122, 121, 121, 0.541);
-    }
+   
     
 }

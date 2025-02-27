@@ -90,7 +90,7 @@ footer {
     font-size: 14px;
 }
 
-@media (max-width:375px){
+@media (max-width:768px){
     article{
         font-size: 15px;
     }
