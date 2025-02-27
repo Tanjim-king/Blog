@@ -18,7 +18,7 @@ const app = createApp({
             }
             if (this.name && this.email && this.password) {
                 console.log(`Name is ${this.name} . Email is ${this.email}  , password is ${this.password}`)
-                axios.post("http://localhost:5050/users" , data)
+                axios.post("/api/users" , data)
                 .then(res =>{
                     window.open("/login" , "_self")
                 })

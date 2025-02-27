@@ -22,7 +22,7 @@ const app = createApp({
         },
        async getUsersData(){
         let data = []
-        await axios.get("http://localhost:5050/users")
+        await axios.get("/api/users")
             .then(res =>{
                 
                 data = res.data;

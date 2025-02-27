@@ -28,7 +28,7 @@ const app = createApp({
     }
    },
    async mounted(){
-       await axios.get("http://localhost:5050/blogs")
+       await axios.get("/api/blogs")
         .then(res=>{
             this.blogs = res.data
         })

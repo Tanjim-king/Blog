@@ -38,7 +38,7 @@ const app = createApp({
             };
 
             if (this.thumb && this.title && this.desc && this.name && this.type) {
-                axios.post("http://localhost:5050/blogs", info)
+                axios.post("/api/blogs", info)
                     .then(res => {
                         alert("Your blog has been successfully added!");
                         window.open("/", "_self");
